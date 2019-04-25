@@ -24,8 +24,11 @@ class TexturePostprocessor : AssetPostprocessor
 
         if (asset && OnImportOnly)
             return;
-
-        Debug.Log("Texture Processing running");
+            
+		if (OnImportOnly)
+			Debug.Log("Texture Processing running");
+		else
+			Debug.LogWarning("Texture Processing overwriting settings on existing textures. This will prevent you from applying your own texture settings!");
 
         textureImporter.SetPlatformTextureSettings("Android", 2048, TextureImporterFormat.ETC2_RGBA8, 100, false);
 
