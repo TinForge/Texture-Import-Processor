@@ -9,7 +9,7 @@ using UnityEditor;
 /// Compression: Best Quality
 /// Converts to normalmap if the word "Normal" is in its filename
 /// 
-/// Change 'OnImportOnly' to true to affect imports only, otherwise apply settings to EVERY texture
+/// Set 'OnImportOnly' to true to affect imports only, otherwise this will overwrite settings you actively apply on textures
 /// 
 /// 
 /// </summary>
