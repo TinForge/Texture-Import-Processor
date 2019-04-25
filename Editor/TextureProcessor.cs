@@ -5,11 +5,12 @@ using UnityEditor;
 /// Sets textures to following specifications:
 /// Platform: Android
 /// Texture size: 2048
-/// Compression: Compressed DXT1 (Not compatible with alpha textures)
+/// Compression: Compressed ETC2 RGBA8
 /// Compression: Best Quality
-/// Converts texture with the word "Normal" in it's filename
+/// Converts to normalmap if the word "Normal" is in its filename
 /// 
 /// Change 'OnImportOnly' to true to affect imports only, otherwise apply settings to EVERY texture
+/// 
 /// 
 /// </summary>
 class TexturePostprocessor : AssetPostprocessor
@@ -24,7 +25,7 @@ class TexturePostprocessor : AssetPostprocessor
         if (asset && OnImportOnly)
             return;
 
-        Debug.Log("VRVision Texture Processing running");
+        Debug.Log("Texture Processing running");
 
         textureImporter.SetPlatformTextureSettings("Android", 2048, TextureImporterFormat.ETC2_RGBA8, 100, false);
 
