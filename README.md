@@ -1,4 +1,4 @@
-# TextureImportProcessor
+# Texture-Import-Processor
 
 ### Automatically configures texture file settings on import
 
